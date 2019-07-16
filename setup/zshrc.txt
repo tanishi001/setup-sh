@@ -1,0 +1,72 @@
+# Path to your oh-my-zsh installation.
+  export ZSH="/home/yuta/.oh-my-zsh"
+
+POWERLEVEL9K_MODE="nerdfont-complete"
+
+POWERLEVEL9K_CUSTOM_WIFI_SIGNAL="zsh_wifi_signal"
+POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_BACKGROUND="green"
+POWERLEVEL9K_CUSTOM_WIFI_SIGNAL_FOREGROUND="white"
+
+zsh_wifi_signal(){
+    local linkup=$(nmcli device wifi | grep '*' | awk -F ' ' '{print $7}') #cut -c 55-64
+    local color='%F{white}'
+    echo -n "$linkup%{%f%} \uf012" # \uf230 is 
+}
+
+POWERLEVEL9K_CONTEXT_TEMPLATE='%n'
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='white'
+
+POWERLEVEL9K_BATTERY_CHARGING='yellow'
+POWERLEVEL9K_BATTERY_CHARGED='black'
+POWERLEVEL9K_BATTERY_DISCONNECTED='$DEFAULT_COLOR'
+POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
+POWERLEVEL9K_BATTERY_LOW_COLOR='red'
+POWERLEVEL9K_BATTERY_ICON='\uf578 '
+POWERLEVEL9K_BATTERY_VERBOSE='false' #よくわからん時間表記を消す
+
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=''
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='yellow'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
+POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context battery dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time dir_writable ip custom_wifi_signal background_jobs)
+#status ram load background_jobs
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uf073 %m/%d}"
+POWERLEVEL9K_TIME_BACKGROUND='white'
+#POWERLEVEL9K_RAM_BACKGROUND='yellow'
+POWERLEVEL9K_LOAD_CRITICAL_BACKGROUND="white"
+POWERLEVEL9K_LOAD_WARNING_BACKGROUND="white"
+POWERLEVEL9K_LOAD_NORMAL_BACKGROUND="white"
+POWERLEVEL9K_LOAD_CRITICAL_FOREGROUND="red"
+POWERLEVEL9K_LOAD_WARNING_FOREGROUND="yellow"
+POWERLEVEL9K_LOAD_NORMAL_FOREGROUND="black"
+POWERLEVEL9K_LOAD_CRITICAL_VISUAL_IDENTIFIER_COLOR="red"
+POWERLEVEL9K_LOAD_WARNING_VISUAL_IDENTIFIER_COLOR="yellow"
+POWERLEVEL9K_LOAD_NORMAL_VISUAL_IDENTIFIER_COLOR="green"
+消すPOWERLEVEL9K_HOME_ICON='\uf015'
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_FOLDER_ICON='\uf74a'
+POWERLEVEL9K_STATUS_VERBOSE=true
+POWERLEVEL9K_STATUS_CROSS=false
+POWERLEVEL9K_OS_ICON_BACKGROUND='202'
+POWERLEVEL9K_CONTEXT_BACKGROUND='202'
+
+plugins=(git zsh-syntax-highlighting zsh-completions)
+
+autoload -U compinit && compinit -u
+
+source $ZSH/oh-my-zsh.sh
+
+alias hotspot="nmcli device wifi hotspot ssid Laptop19 "
+alias LS="ls"
+alias ls="colorls"
+setopt no_beep #ビープ音の停止
+setopt nolistbeep #ビープ音の停止(補完時)
+source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
