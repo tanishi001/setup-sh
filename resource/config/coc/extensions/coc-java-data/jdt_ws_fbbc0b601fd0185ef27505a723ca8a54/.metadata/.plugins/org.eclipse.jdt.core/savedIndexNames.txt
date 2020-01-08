@@ -1,0 +1,17 @@
+INDEX VERSION 1.131+/home/yuta/.config/coc/extensions/coc-java-data/jdt_ws_fbbc0b601fd0185ef27505a723ca8a54/.metadata/.plugins/org.eclipse.jdt.core
+742871070.index
+2924120639.index
+3842426239.index
+227703441.index
+866025344.index
+594812286.index
+1643837622.index
+1538320913.index
+3203297947.index
+372762774.index
+207211359.index
+837489589.index
+2243005949.index
+1899589945.index
+1048571171.index
+2616495266.index
