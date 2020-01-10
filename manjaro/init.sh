@@ -1,6 +1,8 @@
 #!/bin/bash
-readonly setup_dir="$HOME/setup-sh"
-source $setup_dir/resource/CHECK.sh
+source $HOME/setup-sh/resource/import.sh
 
 CHECK sudo pacman -Syu
 CHECK sudo pacman -S git base-devel yay
+
+CHECK mkdir $HOME/.config
+

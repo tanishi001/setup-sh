@@ -1,4 +1,5 @@
 #!/bin/bash
+readonly SETUP_DIR="$HOME/setup-sh/"
 
 red=31
 yellow=33
