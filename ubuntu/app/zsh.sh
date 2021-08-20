@@ -11,6 +11,8 @@ CHECK curl https://sh.rustup.rs -sSf | sh
 CHECK source $HOME/.cargo/env
 CHECK cargo install powerline-rs
 
+CHECK curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
 CHECK git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 CHECK git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 
