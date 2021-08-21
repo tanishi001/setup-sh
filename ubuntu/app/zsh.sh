@@ -7,6 +7,7 @@ CHECK sudo apt install -y zsh
 #CHECK bash $SETUP_DIR/resource/ubuntu/go.sh
 #CHECK go get -u github.com/justjanne/powerline-go
 
+CHECK sudo apt install gcc
 CHECK curl https://sh.rustup.rs -sSf | sh
 CHECK source $HOME/.cargo/env
 CHECK cargo install powerline-rs
