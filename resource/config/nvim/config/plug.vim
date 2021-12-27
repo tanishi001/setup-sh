@@ -7,14 +7,6 @@ call plug#begin()
     " Plug 'Lokaltog/powerline', {'rtp' : 'powerline/bindings/vim'}
     Plug 'itchyny/lightline.vim'
 
-    " deoplete setting
-    if has('nvim')
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    else
-        Plug 'Shougo/deoplete.nvim'
-        Plug 'roxma/nvim-yarp'
-        Plug 'roxma/vim-hug-neovim-rpc'
-    endif
 
     "Language Server Protocol setting
     Plug 'autozimu/LanguageClient-neovim', {
